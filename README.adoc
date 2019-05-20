@@ -1,0 +1,14 @@
+= Personal Website
+
+== What's included (technos & tools)
+- React
+- Typescript
+- Webpack
+- ESlint
+- SASS with postcss and autoprefixer
+
+Configuration includes hot loading for React (also working for styles), live type checking for TS, and live linting.
+
+== TODO
+- Make some content!
+- Simplify css loaders config, I would like something more elegant

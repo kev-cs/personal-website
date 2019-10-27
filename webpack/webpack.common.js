@@ -1,6 +1,33 @@
-const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
+
+const isDev = process.env.NODE_ENV === "development";
+
+const babelTsLoader = {
+  loader: "babel-loader",
+  options: {
+    cacheDirectory: isDev,
+    babelrc: false,
+    presets: [
+      [
+        "@babel/preset-env",
+        { targets: { browsers: "last 2 versions" } }
+      ],
+      "@babel/preset-typescript",
+      "@babel/preset-react"
+    ],
+    plugins: [
+      [
+        "@babel/plugin-proposal-class-properties",
+        { loose: true }
+      ]
+    ]
+  }
+};
+if (isDev)
+  babelTsLoader.options.plugins.push("react-hot-loader/babel");
 
 const CSSLoader = {
   loader: "css-loader",
@@ -29,9 +56,6 @@ const sassLoader = {
 
 module.exports = {
   entry: ["./src/index.tsx"],
-  resolve: {
-    extensions: [".ts", ".tsx", ".js"]
-  },
   module: {
     rules: [
       {
@@ -39,17 +63,43 @@ module.exports = {
         use: "html-loader"
       },
       {
-        test: /\.scss$/,
+        test: /\.([jt])sx?$/,
+        exclude: /node_modules/,
+        use: babelTsLoader
+      },
+      {
+        test: /^((?!global).)*\.s[ac]ss$/,
         include: [path.resolve("src")],
         use: ["style-loader", CSSLoader, postCSSLoader, sassLoader]
+      },
+      {
+        test: /global.*\.s[ac]ss$/,
+        include: [path.resolve("src")],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { hmr: isDev }
+          },
+          "css-loader", postCSSLoader, sassLoader]
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       }
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: "./src/index.html"
     }),
-    new ForkTsCheckerWebpackPlugin({ eslint: true })
+    new ForkTsCheckerWebpackPlugin({ eslint: true }),
+    new MiniCssExtractPlugin()
   ]
 };

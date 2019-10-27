@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-recommended-scss"
+  ],
+  "rules": {
+  },
+  "ignoreFiles": [
+    "src/_reset.scss"
+  ]
+}

@@ -1,0 +1,49 @@
+
+$small-margin: 3rem
+$medium-margin: 5rem
+$large-margin: 10rem
+
+#header
+  margin: 10rem 0
+  text-align: center
+
+  > div
+    margin-bottom: 3rem
+
+    #name
+      font-size: 5rem
+      font-weight: 500
+      margin-bottom: 1rem
+
+    #profession
+      font-size: 2rem
+
+#external-links
+  display: flex
+  margin: 3rem auto
+  justify-content: space-evenly
+  max-width: (640rem / 16)
+
+  a
+    flex-grow: 1
+    flex-basis: 0
+  i
+    font-size: 5rem
+
+#main-nav
+  display: flex
+  flex-direction: row
+  justify-content: space-evenly
+  max-width: (720rem / 16)
+  margin: auto
+
+  a
+    flex-grow: 1
+    flex-basis: 0
+    font-size: 3rem
+    padding: 3rem 0
+
+  // tmp for prototyping
+  a:first-child
+    border-bottom: 1px solid black
+

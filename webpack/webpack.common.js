@@ -56,6 +56,10 @@ const sassLoader = {
 
 module.exports = {
   entry: ["./src/index.tsx"],
+  resolve: {
+    extensions: [".js", ".jsx", ".scss", ".tsx", ".sass"],
+    modules: ["node_modules", "src"]
+  },
   module: {
     rules: [
       {

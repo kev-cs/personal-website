@@ -1,52 +1,23 @@
 @import 'reset'
 
+$small-margin: 3rem
+$medium-margin: 5rem
+$large-margin: 10rem
+
 body
-  padding: 0 5rem
+  margin: 0 $medium-margin
   font-family: Montserrat, sans-serif
 
-main
-  h1
-    font-size: 5rem
-    margin-top: 5rem
-    margin-bottom: 5rem
-    text-align: right
+#language-selector
+  position: absolute
+  top: 1rem
+  right: 1rem
+  margin: 1rem
+  font-size: 4rem
+  opacity: 0.5
 
-  hr
-    border-color: black
-    margin-bottom: 10rem
-    margin-right: 0
-    width: 30%
-
-
-  p
-    margin: 3rem 0
-    font-size: 1rem
-
-header
-  margin: 8rem 0
+#footer
+  margin: 3rem auto
   text-align: center
-
-  > div
-    margin-bottom: 4rem
-
-    > h1
-      font-size: 5rem
-      font-weight: 500
-
-    > h2
-      font-size: 2rem
-
-    *
-      margin-bottom: 1rem
-
-nav
-  display: flex
-  flex-direction: row
-
-  a
-    flex-grow: 1
-    text-align: center
-    font-size: 3rem
-
-
-
+  font-size: 0.75rem
+  color: #444444

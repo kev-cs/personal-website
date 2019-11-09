@@ -1,0 +1,10 @@
+{
+  "profession": "Développeur logiciel",
+  "home": "Accueil",
+  "about": "À propos",
+  "connect": "Joindre",
+  "greeting": "Bonjour, je suis un développeur logiciel résidant à Montréal, QC.",
+  "homeIntro1": "En quelques mots : Java, développement web, Linux, et de la simplicité.",
+  "homeIntro2": "Je suis un fan de l'Agilité, le \"clean coding\", le développement nuagique, les pratiques de CI/CD, le TDD, et plus. J'aime m'entretenir en explorant des solutions de conception et d'architecture logicielle.",
+  "homeIntro3": "Présentement, je fais du développement Java chez le groupe financier Desjardins."
+}

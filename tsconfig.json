@@ -6,6 +6,14 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es6",
-    "jsx": "react"
+    "jsx": "react",
+    "lib": [
+      "esnext.intl",
+      "es2017.intl",
+      "es2018.intl",
+      "dom"
+    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }

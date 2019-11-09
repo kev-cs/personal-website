@@ -1,0 +1,49 @@
+$small-margin: 3rem
+$medium-margin: 5rem
+$large-margin: 10rem
+
+#language-selector
+  position: absolute
+  top: 1rem
+  right: 1rem
+  margin: 1rem
+
+  *
+    vertical-align: middle
+    transition: all 0.2s ease-out
+
+  a
+    font-size: 3rem
+    padding: 1rem 0
+    border: 1px solid steelblue
+    color: steelblue
+    width: 7.5rem
+    display: inline-block
+    text-align: center
+    margin: 0 1rem
+    position: relative
+
+  i
+    padding: 1rem
+    font-size: 5rem
+
+  a.hidden
+    opacity: 0
+    transform: translate(50%)
+
+  a.shown
+    opacity: 1
+    transform: translate(0%)
+
+    @media (hover: hover)
+      &:hover
+        cursor: pointer
+        color: black
+        border-color: black
+
+  .inactive
+    opacity: 0.5
+
+  .active
+    opacity: 1
+    color: steelblue

@@ -1,22 +1,24 @@
 import * as React from "react";
 import * as styles from "./Home.sass";
+import { FormattedMessage } from "react-intl";
 
 export default class Home extends React.Component<{}, {}> {
   render(): JSX.Element {
     return (
       <div id={styles.home}>
         <header id={styles.greeting}>
-          Hi, I&apos;m a software developer based in Montreal, QC.
+          <FormattedMessage id="greeting" />
         </header>
         <hr id={styles.greetingHr} />
         <p>
-          In a few words : Java, Javascript, and various types of scripting.
+          <FormattedMessage id="homeIntro1" />
         </p>
         <p>
-          I&apos;m a fan of Agile, clean coding, cloud development, software
-          design, CI/CD, Linux, emerging technologies and simplicity.
+          <FormattedMessage id="homeIntro2" />
         </p>
-        <p>Currently doing Java development at Desjardins Group.</p>
+        <p>
+          <FormattedMessage id="homeIntro3" />
+        </p>
       </div>
     );
   }

@@ -25,6 +25,7 @@
     "@typescript-eslint/parser": "^2.2.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^2.1.1",
     "eslint": "^6.4.0",
     "eslint-plugin-react": "^7.14.3",
@@ -54,6 +55,7 @@
   },
   "dependencies": {
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-intl": "^3.4.0"
   }
 }

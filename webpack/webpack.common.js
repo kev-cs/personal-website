@@ -1,8 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
+const buildPath = path.resolve(__dirname, "../dist");
 const isDev = process.env.NODE_ENV === "development";
 
 const babelTsLoader = {
@@ -55,10 +57,14 @@ const sassLoader = {
 };
 
 module.exports = {
-  entry: ["./src/index.tsx"],
+  entry: "./src/index.tsx",
   resolve: {
-    extensions: [".js", ".jsx", ".scss", ".tsx", ".sass"],
+    extensions: [".js", ".jsx", ".scss", ".ts", ".tsx", ".sass", ".json"],
     modules: ["node_modules", "src"]
+  },
+  output: {
+    path: buildPath,
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -104,6 +110,7 @@ module.exports = {
       template: "./src/index.html"
     }),
     new ForkTsCheckerWebpackPlugin({ eslint: true }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new CopyPlugin([{ from: "public" }])
   ]
 };

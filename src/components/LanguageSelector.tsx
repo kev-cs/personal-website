@@ -14,17 +14,23 @@ export default class LanguageSelector extends React.Component<LanguageSelectorPr
     showLanguages: false
   };
 
-  private changeLanguage(lang: string): void {
-    const { changeLanguage } = this.props;
-    changeLanguage(lang);
-    this.setState({ showLanguages: false });
-  }
-
   private toggleShowLangues = (): void => {
     this.setState((state) => ({
       showLanguages: !state.showLanguages
     }));
   };
+
+  private changeLanguage(lang: string): () => void {
+    return (): void => {
+      const { changeLanguage } = this.props;
+      const { showLanguages } = this.state;
+
+      if (showLanguages) {
+        changeLanguage(lang);
+        this.setState({ showLanguages: false });
+      }
+    };
+  }
 
   render(): JSX.Element {
     const { showLanguages } = this.state;
@@ -33,9 +39,9 @@ export default class LanguageSelector extends React.Component<LanguageSelectorPr
 
     return (
       <div id={styles.languageSelector}>
-        <a className={langClasses} onClick={(): void => this.changeLanguage("fr")}>fr</a>
-        <a className={langClasses} onClick={(): void => this.changeLanguage("en")}>en</a>
         <i className={`fas fa-language ${iconClasses}`} onClick={this.toggleShowLangues}/>
+        <a className={langClasses} onClick={this.changeLanguage("fr")}>fr</a>
+        <a className={langClasses} onClick={this.changeLanguage("en")}>en</a>
       </div>
     );
   }

@@ -52,6 +52,7 @@ const postCSSLoader = {
 const sassLoader = {
   loader: "sass-loader",
   options: {
+    data: '@import "settings.sass";',
     sourceMap: true
   }
 };
@@ -88,7 +89,9 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { hmr: isDev }
+            options: {
+              hmr: isDev
+            }
           },
           "css-loader", postCSSLoader, sassLoader]
       },

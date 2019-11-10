@@ -8,8 +8,8 @@ export default class Home extends React.Component<{}, {}> {
       <div id={styles.home}>
         <header id={styles.greeting}>
           <FormattedMessage id="greeting" />
+          <hr id={styles.greetingHr} />
         </header>
-        <hr id={styles.greetingHr} />
         <p>
           <FormattedMessage id="homeIntro1" />
         </p>

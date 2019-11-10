@@ -5,8 +5,7 @@ const config = merge(require("./webpack.common"), {
   mode: "development",
   devtool: "source-map",
   devServer: {
-    hot: true,
-    host: "0.0.0.0"
+    hot: true
   },
   stats: "errors-warnings",
   plugins: [

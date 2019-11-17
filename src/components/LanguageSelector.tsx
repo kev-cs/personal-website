@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as styles from "./LanguageSelector.sass";
+import styles from "./LanguageSelector.sass";
 
 type LanguageSelectorProps = {
   changeLanguage: (lang: string) => void;

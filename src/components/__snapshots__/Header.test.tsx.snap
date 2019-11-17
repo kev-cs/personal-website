@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  id="header"
+>
+  <div>
+    <h1
+      id="name"
+    >
+      Kevin Caro Silva
+    </h1>
+    <h2
+      id="profession"
+    >
+      Software developer
+    </h2>
+  </div>
+  <div
+    id="externalLinks"
+  >
+    <a>
+      <i
+        className="fab fa-github"
+      />
+    </a>
+    <a>
+      <i
+        className="fab fa-linkedin"
+      />
+    </a>
+    <a>
+      <i
+        className="fas fa-envelope"
+      />
+    </a>
+    <a>
+      <i
+        className="fas fa-comment-alt"
+      />
+    </a>
+  </div>
+  <nav
+    id="mainNav"
+  >
+    <a>
+      Home
+    </a>
+    <a>
+      About
+    </a>
+    <a>
+      Connect
+    </a>
+  </nav>
+</header>
+`;

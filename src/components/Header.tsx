@@ -1,16 +1,34 @@
 import * as React from "react";
-import * as styles from "./Header.sass";
-import { FormattedMessage } from "react-intl";
+import styles from "./Header.sass";
+import { defineMessages, FormattedMessage } from "react-intl";
+
+const messages = defineMessages({
+  profession: {
+    id: "profession",
+    defaultMessage: "Software developer"
+  },
+  home: {
+    id: "home",
+    defaultMessage: "Home"
+  },
+  about: {
+    id: "about",
+    defaultMessage: "About"
+  },
+  connect: {
+    id: "connect",
+    defaultMessage: "Connect"
+  }
+});
 
 export default class Header extends React.Component<{}, {}> {
   render(): JSX.Element {
     return (
       <header id={styles.header}>
         <div>
-          <h1 id={styles.name}><>Kevin Caro Silva</>
-          </h1>
+          <h1 id={styles.name}>Kevin Caro Silva</h1>
           <h2 id={styles.profession}>
-            <FormattedMessage id="profession"/>
+            <FormattedMessage {...messages.profession}/>
           </h2>
         </div>
         <div id={styles.externalLinks}>
@@ -29,13 +47,13 @@ export default class Header extends React.Component<{}, {}> {
         </div>
         <nav id={styles.mainNav}>
           <a>
-            <FormattedMessage id="home" />
+            <FormattedMessage {...messages.home}/>
           </a>
           <a>
-            <FormattedMessage id="about" />
+            <FormattedMessage {...messages.about}/>
           </a>
           <a>
-            <FormattedMessage id="connect" />
+            <FormattedMessage {...messages.connect}/>
           </a>
         </nav>
       </header>

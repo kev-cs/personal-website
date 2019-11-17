@@ -1,0 +1,18 @@
+[
+  {
+    "id": "greeting",
+    "defaultMessage": "Hi, I'm a software developer based in Montreal, QC."
+  },
+  {
+    "id": "homeIntro1",
+    "defaultMessage": "In a few words : Java, web dev, Linux and simplicity."
+  },
+  {
+    "id": "homeIntro2",
+    "defaultMessage": "I'm also a fan of Agile, clean coding, cloud development, CI/CD, TDD, and more. I enjoy exploring solutions for software design and architecture."
+  },
+  {
+    "id": "homeIntro3",
+    "defaultMessage": "Currently doing Java development at Desjardins Group."
+  }
+]

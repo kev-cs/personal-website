@@ -7,21 +7,22 @@ import Home from "components/Home";
 import LanguageSelector from "components/LanguageSelector";
 
 import "./global-styles.sass";
-import fr from "./assets/locales/fr.json";
-import en from "./assets/locales/en.json";
-
-const messages: Record<string, Record<string, string>> = {
-  en,
-  fr
-};
+import fr from "./assets/translations/fr.json";
 
 type AppState = {
   locale: string;
 }
 
 class App extends React.Component <null, AppState> {
+
+  private readonly defaultLocale: string = "en";
+
+  private readonly translations: Record<string, Record<string, string>> = {
+    fr
+  };
+
   state = {
-    locale: navigator.language.split(/[-_]/)[0]  // language without region code
+    locale: navigator.language.split(/[-_]/)[0]  // locale without region code
   };
 
   changeLanguage = (lang: string): void => {
@@ -35,11 +36,11 @@ class App extends React.Component <null, AppState> {
       <footer id="footer">© 2019 Kevin Caro Silva</footer>
     );
 
-    const currentMessages = messages[this.state.locale] || messages["en"];
+    const currentMessages = this.translations[this.state.locale] || this.translations[this.defaultLocale];
 
     return (
       <>
-        <IntlProvider locale={navigator.language} messages={currentMessages} defaultLocale={"en"}>
+        <IntlProvider locale={this.state.locale} messages={currentMessages} defaultLocale={this.defaultLocale}>
           <LanguageSelector changeLanguage={this.changeLanguage}/>
           <Header/>
           <Home/>

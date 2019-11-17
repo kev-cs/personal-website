@@ -1,0 +1,18 @@
+[
+  {
+    "id": "profession",
+    "defaultMessage": "Software developer"
+  },
+  {
+    "id": "home",
+    "defaultMessage": "Home"
+  },
+  {
+    "id": "about",
+    "defaultMessage": "About"
+  },
+  {
+    "id": "connect",
+    "defaultMessage": "Connect"
+  }
+]

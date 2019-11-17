@@ -11,21 +11,8 @@ const babelTsLoader = {
   loader: "babel-loader",
   options: {
     cacheDirectory: isDev,
-    babelrc: false,
-    presets: [
-      [
-        "@babel/preset-env",
-        { targets: { browsers: "last 2 versions" } }
-      ],
-      "@babel/preset-typescript",
-      "@babel/preset-react"
-    ],
-    plugins: [
-      [
-        "@babel/plugin-proposal-class-properties",
-        { loose: true }
-      ]
-    ]
+    babelrc: true,
+    plugins: []
   }
 };
 if (isDev)
@@ -52,7 +39,7 @@ const postCSSLoader = {
 const sassLoader = {
   loader: "sass-loader",
   options: {
-    data: '@import "settings.sass";',
+    data: "@import \"settings.sass\";",
     sourceMap: true
   }
 };

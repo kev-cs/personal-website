@@ -1,8 +1,0 @@
-. Home
-+
-Small introduction, with links
-. About Me
-+
-
-. Connect
-. Blog

@@ -4,5 +4,12 @@ module.exports = {
   moduleNameMapper: {
     "^.+\\.(css|less|sass|scss)$": "identity-obj-proxy"
   },
-  snapshotSerializers: ["enzyme-to-json/serializer"]
+  snapshotSerializers: ["enzyme-to-json/serializer"],
+  modulePaths: [
+    "<rootDir>"
+  ],
+  moduleDirectories: [
+    "node_modules",
+    "src"
+  ],
 };

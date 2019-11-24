@@ -1,20 +1,21 @@
 import * as React from "react";
 import styles from "./LanguageSelector.sass";
 
-type LanguageSelectorProps = {
+type Props = {
   changeLanguage: (lang: string) => void;
+  supportedLanguages: Array<string>;
 }
 
-type LanguageSelectorState = {
+type State = {
   showLanguages: boolean;
 }
 
-export default class LanguageSelector extends React.Component<LanguageSelectorProps, LanguageSelectorState> {
+export default class LanguageSelector extends React.Component<Props, State> {
   state = {
     showLanguages: false
   };
 
-  private toggleShowLangues = (): void => {
+  private toggleShowLanguages = (): void => {
     this.setState((state) => ({
       showLanguages: !state.showLanguages
     }));
@@ -34,14 +35,24 @@ export default class LanguageSelector extends React.Component<LanguageSelectorPr
 
   render(): JSX.Element {
     const { showLanguages } = this.state;
+    const { supportedLanguages } = this.props;
+
     const langClasses = showLanguages ? styles.shown : styles.hidden;
     const iconClasses = showLanguages ? styles.active : styles.inactive;
 
     return (
       <div id={styles.languageSelector}>
-        <i className={`fas fa-language ${iconClasses}`} onClick={this.toggleShowLangues}/>
-        <a className={langClasses} onClick={this.changeLanguage("fr")}>fr</a>
-        <a className={langClasses} onClick={this.changeLanguage("en")}>en</a>
+        <i className={`fas fa-language ${iconClasses}`}
+           onClick={this.toggleShowLanguages}
+           data-testid="toggle-show-languages"/>
+        {
+          showLanguages &&
+          supportedLanguages.map((lang, i) =>
+            <a key={i} className={langClasses} onClick={this.changeLanguage(lang)}>
+              {lang}
+            </a>
+          )
+        }
       </div>
     );
   }

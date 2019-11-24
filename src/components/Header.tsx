@@ -45,17 +45,6 @@ export default class Header extends React.Component<{}, {}> {
             <i className="fas fa-comment-alt"/>
           </a>
         </div>
-        <nav id={styles.mainNav}>
-          <a>
-            <FormattedMessage {...messages.home}/>
-          </a>
-          <a>
-            <FormattedMessage {...messages.about}/>
-          </a>
-          <a>
-            <FormattedMessage {...messages.connect}/>
-          </a>
-        </nav>
       </header>
     );
   }

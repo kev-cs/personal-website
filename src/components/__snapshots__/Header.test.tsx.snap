@@ -40,18 +40,5 @@ exports[`Header renders correctly 1`] = `
       />
     </a>
   </div>
-  <nav
-    id="mainNav"
-  >
-    <a>
-      Home
-    </a>
-    <a>
-      About
-    </a>
-    <a>
-      Connect
-    </a>
-  </nav>
 </header>
 `;

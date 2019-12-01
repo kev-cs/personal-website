@@ -32,17 +32,14 @@ export default class Header extends React.Component<{}, {}> {
           </h2>
         </div>
         <div id={styles.externalLinks}>
-          <a>
+          <a href="https://github.com/kev-cs">
             <i className="fab fa-github"/>
           </a>
-          <a>
+          <a href="https://www.linkedin.com/in/kevin-caro-silva-36670a136/">
             <i className="fab fa-linkedin"/>
           </a>
-          <a>
+          <a href="mailto:admin@kevincs.me">
             <i className="fas fa-envelope"/>
-          </a>
-          <a>
-            <i className="fas fa-comment-alt"/>
           </a>
         </div>
       </header>

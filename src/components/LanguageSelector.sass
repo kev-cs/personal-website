@@ -2,26 +2,26 @@
   position: absolute
   top: 1rem
   right: 1rem
-  margin: 1rem
 
   *
     vertical-align: middle
     transition: all 0.2s ease-out
 
   a
-    font-size: $font-size-large
-    padding: 1rem 0
+    font-size: $font-size-regular
+    padding: $padding-small
     border: 1px solid $palette-primary-2
     color: $palette-primary-2
     background-color: rgba(255, 255, 255, 0.9)
     width: 100%
     display: block
     text-align: center
-    margin: 2rem auto
+    margin: $margin-regular auto
     position: relative
 
   i
-    margin: 0 auto -1rem
+    margin: 0 auto ($margin-small * -1)
+    padding: 0 $padding-xsmall
     display: block
     font-size: $font-size-xlarge
     color: $palette-primary-2
@@ -42,7 +42,7 @@
         border-color: $palette-primary-4
 
   .inactive
-    opacity: 0.5
+    opacity: $opacity-inactive
 
   .active
     opacity: 1

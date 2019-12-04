@@ -47,8 +47,11 @@ const sassLoader = {
 module.exports = {
   entry: "./src/index.tsx",
   resolve: {
-    extensions: [".js", ".jsx", ".scss", ".ts", ".tsx", ".sass", ".json"],
-    modules: ["node_modules", "src"]
+    extensions: [".js", ".jsx", ".scss", ".ts", ".tsx", ".sass", ".json", ".svg"],
+    modules: ["node_modules", "src"],
+    alias: {
+      Assets: path.resolve(__dirname, "src/assets")
+    }
   },
   output: {
     path: buildPath,
@@ -86,9 +89,20 @@ module.exports = {
         test: /\.(png|jpg|gif)$/i,
         use: [
           {
-            loader: "url-loader",
+            loader: "file-loader",
             options: {
               limit: 8192
+            }
+          }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-url-loader",
+            options: {
+              limit: 10000
             }
           }
         ]

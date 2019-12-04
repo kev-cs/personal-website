@@ -1,35 +1,31 @@
 #language-selector
   position: absolute
-  top: 1rem
-  right: 1rem
+  top: 0
+  right: 0
+  padding: $padding-xsmall
 
   *
-    vertical-align: middle
     transition: all 0.2s ease-out
 
   a
     font-size: $font-size-regular
     padding: $padding-small
-    border: 1px solid $palette-primary-2
-    color: $palette-primary-2
+    border: 1px solid $color-primary-2
+    color: $color-primary-2
     background-color: rgba(255, 255, 255, 0.9)
     width: 100%
     display: block
     text-align: center
-    margin: $margin-regular auto
+    margin: 0 auto $margin-regular
     position: relative
 
   i
-    margin: 0 auto ($margin-small * -1)
+    margin: 0 auto $margin-small
     padding: 0 $padding-xsmall
     display: block
     font-size: $font-size-xlarge
-    color: $palette-primary-2
+    color: $color-primary-2
     text-align: center
-
-  a.hidden
-    opacity: 0
-    transform: translateY(-50%)
 
   a.shown
     opacity: 1
@@ -38,8 +34,8 @@
     @media (hover: hover)
       &:hover
         cursor: pointer
-        color: $palette-primary-4
-        border-color: $palette-primary-4
+        color: $color-primary-4
+        border-color: $color-primary-4
 
   .inactive
     opacity: $opacity-inactive

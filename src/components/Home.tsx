@@ -9,11 +9,11 @@ const messages = defineMessages({
   },
   homeIntro1: {
     id: "homeIntro1",
-    defaultMessage: "In a few words : Java, web dev, Linux and simplicity."
+    defaultMessage: "In a few words : Java, Agile, web development, automation, and simplicity."
   },
   homeIntro2: {
     id: "homeIntro2",
-    defaultMessage: "I'm also a fan of Agile, clean coding, cloud development, CI/CD, TDD, and more. I enjoy exploring solutions for software design and architecture."
+    defaultMessage: "I'm also a fan of clean coding, Linux, cloud development, CI/CD, TDD, and too much more to enumerate. I enjoy exploring solutions for software design and architecture."
   },
   homeIntro3: {
     id: "homeIntro3",
@@ -30,10 +30,8 @@ export default class Home extends React.Component<{}, {}> {
           <hr id={styles.greetingHr}/>
         </header>
         <p>
-          <FormattedMessage {...messages.homeIntro1}/>
-        </p>
-        <p>
-          <FormattedMessage {...messages.homeIntro2}/>
+          <FormattedMessage {...messages.homeIntro1}/>{" "}
+          <FormattedMessage {...messages.homeIntro2}/>{" "}
         </p>
         <p>
           <FormattedMessage {...messages.homeIntro3}/>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import styles from "./Header.sass";
 import { defineMessages, FormattedMessage } from "react-intl";
+import logo from "assets/vector/isolated-layout.svg";
 
 const messages = defineMessages({
   profession: {
@@ -26,6 +27,7 @@ export default class Header extends React.Component<{}, {}> {
     return (
       <header id={styles.header}>
         <div>
+          <img src={logo} alt="Personal website logo"/>
           <h1 id={styles.name}>Kevin Caro Silva</h1>
           <h2 id={styles.profession}>
             <FormattedMessage {...messages.profession}/>

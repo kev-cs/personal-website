@@ -1,13 +1,39 @@
 @import 'reset'
 
+html
+  height: 100%
+
 body
-  margin: 0 1rem
-  font-family: Montserrat, sans-serif
+  max-width: (720rem / 16)
+  margin: auto
+  height: 100%
+
+a
+  color: $color-primary-0
+
+#root
+  padding: $padding-regular
+  font-family: Roboto, sans-serif
   font-size: $font-size-regular
-  color: $palette-primary-4
+  color: $color-primary-4
+  position: relative
+  height: 100%
+  display: flex
+  flex-flow: column
 
 #footer
-  margin: 1rem auto
+  margin: $margin-large 0
   text-align: center
   font-size: $font-size-small
-  color: $palette-primary-2
+  color: $color-primary-2
+  flex-grow: 1
+  vertical-align: bottom
+  position: relative
+
+  span
+    position: absolute
+    bottom: 0
+    display: block
+    vertical-align: bottom
+    left: 50%
+    transform: translateX(-50%)

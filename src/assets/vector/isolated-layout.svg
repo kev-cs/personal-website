@@ -1,0 +1,16 @@
+<svg data-v-fde0c5aa="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" class="icon"><!---->
+    <defs data-v-fde0c5aa=""><!----></defs>
+    <rect data-v-fde0c5aa="" fill="transparent" x="0" y="0" width="300px" height="300px"
+          class="logo-background-square"></rect><!---->
+    <defs data-v-fde0c5aa="">
+        <linearGradient data-v-fde0c5aa="" gradientTransform="rotate(25)" id="dc996fa9-585b-415d-a671-e6e4463ff6be"
+                        x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop data-v-fde0c5aa="" offset="0%" stop-color="#006678" stop-opacity="1"></stop>
+            <stop data-v-fde0c5aa="" offset="100%" stop-color="#4FA8FF" stop-opacity="1"></stop>
+        </linearGradient>
+    </defs>
+    <g data-v-fde0c5aa="" id="ed2f2241-7286-4a60-8e0e-c2aebb59f0af" fill="url(#dc996fa9-585b-415d-a671-e6e4463ff6be)"
+       stroke="none" transform="matrix(6.875,0,0,6.875,40,40.000000819563866)">
+        <path d="M17.572 23.933l4.106 7.095L32 13.189h-8.981V7.582L11.51.972 0 7.582v13.222l11.51 6.611 6.062-3.482zm10.96-8.744l-6.855 11.846-6.855-11.846h13.71z"></path>
+    </g><!---->
+</svg>

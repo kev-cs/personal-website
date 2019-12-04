@@ -5,6 +5,7 @@ import Home from "components/Home";
 import LanguageSelector from "components/LanguageSelector";
 
 import fr from "assets/translations/fr.json";
+import { WebsiteDevNotice } from "./WebsiteDevNotice";
 
 type State = {
   locale: string;
@@ -17,7 +18,6 @@ type SupportedLanguage = typeof supportedLanguagesBackingArray[number];
 export default class App extends React.Component <{}, State> {
 
   private readonly defaultLocale: SupportedLanguage = "en";
-
   private readonly translations: Record<SupportedLanguage, Record<string, string>> = {
     en: null, // default locale used in application
     fr
@@ -38,12 +38,13 @@ export default class App extends React.Component <{}, State> {
       this.state.locale as SupportedLanguage : this.defaultLocale;
 
     const Footer = (): JSX.Element => (
-      <footer id="footer">© 2019 Kevin Caro Silva</footer>
+      <footer id="footer"><span>© 2019 Kevin Caro Silva</span></footer>
     );
 
     return (
       <>
         <IntlProvider locale={locale} messages={this.translations[locale]} defaultLocale={this.defaultLocale}>
+          <WebsiteDevNotice/>
           <LanguageSelector changeLanguage={this.changeLanguage} supportedLanguages={supportedLanguages}/>
           <Header/>
           <Home/>

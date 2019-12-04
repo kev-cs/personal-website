@@ -3,6 +3,21 @@
 exports[`App renders correctly 1`] = `
 Array [
   <div
+    id="webDevNotice"
+  >
+    <i
+      className="fas fa-exclamation-circle"
+    />
+    <div>
+      <h2>
+        Slowly but surely
+      </h2>
+      <p>
+        I'm currently developing this website, more coming soon!
+      </p>
+    </div>
+  </div>,
+  <div
     id="languageSelector"
   >
     <i
@@ -15,6 +30,10 @@ Array [
     id="header"
   >
     <div>
+      <img
+        alt="Personal website logo"
+        src="test-file-stub"
+      />
       <h1
         id="name"
       >
@@ -64,10 +83,10 @@ Array [
       />
     </header>
     <p>
-      In a few words : Java, web dev, Linux and simplicity.
-    </p>
-    <p>
-      I'm also a fan of Agile, clean coding, cloud development, CI/CD, TDD, and more. I enjoy exploring solutions for software design and architecture.
+      In a few words : Java, Agile, web development, automation, and simplicity.
+       
+      I'm also a fan of clean coding, Linux, cloud development, CI/CD, TDD, and too much more to enumerate. I enjoy exploring solutions for software design and architecture.
+       
     </p>
     <p>
       Currently doing Java development at Desjardins Group.
@@ -76,7 +95,9 @@ Array [
   <footer
     id="footer"
   >
-    © 2019 Kevin Caro Silva
+    <span>
+      © 2019 Kevin Caro Silva
+    </span>
   </footer>,
 ]
 `;

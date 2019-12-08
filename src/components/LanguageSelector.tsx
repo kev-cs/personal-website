@@ -1,5 +1,7 @@
 import * as React from "react";
 import styles from "./LanguageSelector.sass";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
   changeLanguage: (lang: string) => void;
@@ -38,19 +40,19 @@ export default class LanguageSelector extends React.Component<Props, State> {
     const { supportedLanguages } = this.props;
 
     const langClasses = showLanguages ? styles.shown : styles.hidden;
-    const iconClasses = showLanguages ? styles.active : styles.inactive;
+    const iconClasses = `${styles.icon} ${showLanguages ? styles.active : styles.inactive}`;
 
     return (
       <div id={styles.languageSelector}>
-        <i className={`fas fa-language ${iconClasses}`}
+        <FontAwesomeIcon icon={faLanguage} className={iconClasses}
            onClick={this.toggleShowLanguages}
            data-testid="toggle-show-languages"/>
         {
           showLanguages &&
           supportedLanguages.map((lang, i) =>
-            <a key={i} className={langClasses} onClick={this.changeLanguage(lang)}>
+            <button key={i} className={langClasses} onClick={this.changeLanguage(lang)}>
               {lang}
-            </a>
+            </button>
           )
         }
       </div>

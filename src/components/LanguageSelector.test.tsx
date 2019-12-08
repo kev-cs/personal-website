@@ -1,5 +1,5 @@
 import React from "react";
-import { render, RenderResult } from "@testing-library/react";
+import { render, RenderResult, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import LanguageSelector from "./LanguageSelector";
 
@@ -19,6 +19,16 @@ describe("LanguageSelector", function() {
       />);
   });
 
+  function clickOnToggleLanguagesOptionsIcon() {
+    fireEvent(
+      sut.getByTestId("toggle-show-languages"),
+      new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true
+      })
+    );
+  }
+
   it("initially has no language options visible", () => {
     supportedLanguages.forEach(val => {
       expect(sut.queryByText(val)).toBeNull();
@@ -26,7 +36,7 @@ describe("LanguageSelector", function() {
   });
 
   it("shows available language options when it is clicked", () => {
-    sut.getByTestId("toggle-show-languages").click();
+    clickOnToggleLanguagesOptionsIcon();
 
     supportedLanguages.forEach(val => {
       expect(sut.queryByText(val)).toBeVisible();
@@ -34,8 +44,8 @@ describe("LanguageSelector", function() {
   });
 
   it("hides options when it is clicked if options were shown", () => {
-    sut.getByTestId("toggle-show-languages").click();
-    sut.getByTestId("toggle-show-languages").click();
+    clickOnToggleLanguagesOptionsIcon();
+    clickOnToggleLanguagesOptionsIcon();
 
     supportedLanguages.forEach(val => {
       expect(sut.queryByText(val)).toBeNull();
@@ -43,14 +53,14 @@ describe("LanguageSelector", function() {
   });
 
   it("hides options when a language is chosen", () => {
-    sut.getByTestId("toggle-show-languages").click();
+    clickOnToggleLanguagesOptionsIcon();
     sut.queryByText(supportedLanguages[0]).click();
 
     expect(sut.queryByText(supportedLanguages[0])).toBeNull();
   });
 
   it("changes language when a language is chosen", () => {
-    sut.getByTestId("toggle-show-languages").click();
+    clickOnToggleLanguagesOptionsIcon();
     sut.queryByText(supportedLanguages[0]).click();
 
     expect(changeLanguageMock.mock.calls[0][0]).toBe(supportedLanguages[0]);

@@ -15,32 +15,41 @@ const babelTsLoader = {
     plugins: []
   }
 };
-if (isDev)
-  babelTsLoader.options.plugins.push("react-hot-loader/babel");
+if (isDev) babelTsLoader.options.plugins.push("react-hot-loader/babel");
 
-const CSSLoader = {
+const cssLoader = {
   loader: "css-loader",
   options: {
+    sourceMap: isDev,
     modules: true,
-    // sourceMap: true,
-    importLoaders: 1,
+    importLoaders: 3,
     localIdentName: "[local]__[hash:base64:5]",
     camelCase: true
+  }
+};
+const cssLoaderGlobalStyles = {
+  loader: "css-loader",
+  options: {
+    importLoaders: 3
   }
 };
 const postCSSLoader = {
   loader: "postcss-loader",
   options: {
     ident: "postcss",
-    // sourceMap: true,
     plugins: () => [require("autoprefixer")()]
   }
 };
 const sassLoader = {
   loader: "sass-loader",
   options: {
-    data: "@import \"settings.sass\";",
-    // sourceMap: true
+    data: "@import \"settings.sass\";"
+  }
+};
+const miniCssExtractLoader = {
+  loader: MiniCssExtractPlugin.loader,
+  options: {
+    hmr: isDev
   }
 };
 
@@ -70,23 +79,14 @@ module.exports = {
       },
       {
         test: /^((?!global).)*\.s[ac]ss$/,
-        include: [path.resolve("src")],
-        use: ["style-loader", CSSLoader, postCSSLoader, sassLoader]
+        use: [miniCssExtractLoader, cssLoader, postCSSLoader, sassLoader]
       },
       {
         test: /global.*\.s[ac]ss$/,
-        include: [path.resolve("src")],
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev
-            }
-          },
-          "css-loader", postCSSLoader, sassLoader]
+        use: [miniCssExtractLoader, cssLoaderGlobalStyles, postCSSLoader, sassLoader]
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(eot|gif|otf|png|ttf|woff2?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: [
           {
             loader: "file-loader",

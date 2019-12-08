@@ -5,15 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.js",
-    "build": "npm run test && npm run translations:validate && NODE_ENV=production webpack --config webpack/webpack.prod.js",
+    "build": "npm run test && npm run translations:validate && npm run build:bundle",
+    "build:bundle": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "test": "jest",
-    "test-watch": "npm run test -- --watch",
+    "test:watch": "npm run test -- --watch",
     "translations:extract-messages": "NODE_ENV=production babel src --extensions .ts,.tsx,.js --out-file /dev/null",
     "translations:manage-translations": "node ./scripts/translationRunner.js",
     "translations:validate": "./scripts/manage-translations.sh"
   },
   "author": "Kevin Caro Silva",
-  "license": "ISC",
+  "license": "CC BY-SA 4.0",
   "browserslist": [
     "defaults"
   ],
@@ -79,6 +80,10 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-intl": "^3.4.0"

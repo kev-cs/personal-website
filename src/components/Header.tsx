@@ -2,6 +2,9 @@ import * as React from "react";
 import styles from "./Header.sass";
 import { defineMessages, FormattedMessage } from "react-intl";
 import logo from "assets/vector/isolated-layout.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const messages = defineMessages({
   profession: {
@@ -34,14 +37,14 @@ export default class Header extends React.Component<{}, {}> {
           </h2>
         </div>
         <div id={styles.externalLinks}>
-          <a href="https://github.com/kev-cs" aria-label="My Github" >
-            <i className="fab fa-github"/>
+          <a href="https://github.com/kev-cs" aria-label="My Github">
+            <FontAwesomeIcon icon={faGithub}/>
           </a>
           <a href="https://www.linkedin.com/in/kevin-caro-silva-36670a136/" aria-label="My LinkedIn page">
-            <i className="fab fa-linkedin"/>
+            <FontAwesomeIcon icon={faLinkedin}/>
           </a>
           <a href="mailto:admin@kevincs.me" aria-label="My email to contact me">
-            <i className="fas fa-envelope"/>
+            <FontAwesomeIcon icon={faEnvelope}/>
           </a>
         </div>
       </header>

@@ -22,7 +22,7 @@ const CSSLoader = {
   loader: "css-loader",
   options: {
     modules: true,
-    sourceMap: true,
+    // sourceMap: true,
     importLoaders: 1,
     localIdentName: "[local]__[hash:base64:5]",
     camelCase: true
@@ -32,7 +32,7 @@ const postCSSLoader = {
   loader: "postcss-loader",
   options: {
     ident: "postcss",
-    sourceMap: true,
+    // sourceMap: true,
     plugins: () => [require("autoprefixer")()]
   }
 };
@@ -40,7 +40,7 @@ const sassLoader = {
   loader: "sass-loader",
   options: {
     data: "@import \"settings.sass\";",
-    sourceMap: true
+    // sourceMap: true
   }
 };
 

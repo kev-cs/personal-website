@@ -27,20 +27,20 @@ export default class Header extends React.Component<{}, {}> {
     return (
       <header id={styles.header}>
         <div>
-          <img src={logo} alt="Personal website logo"/>
+          <img src={logo} alt="Personal website logo" width="10rem"/>
           <h1 id={styles.name}>Kevin Caro Silva</h1>
           <h2 id={styles.profession}>
             <FormattedMessage {...messages.profession}/>
           </h2>
         </div>
         <div id={styles.externalLinks}>
-          <a href="https://github.com/kev-cs">
+          <a href="https://github.com/kev-cs" aria-label="My Github" >
             <i className="fab fa-github"/>
           </a>
-          <a href="https://www.linkedin.com/in/kevin-caro-silva-36670a136/">
+          <a href="https://www.linkedin.com/in/kevin-caro-silva-36670a136/" aria-label="My LinkedIn page">
             <i className="fab fa-linkedin"/>
           </a>
-          <a href="mailto:admin@kevincs.me">
+          <a href="mailto:admin@kevincs.me" aria-label="My email to contact me">
             <i className="fas fa-envelope"/>
           </a>
         </div>

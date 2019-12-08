@@ -1,6 +1,6 @@
 #home p
   margin: $margin-regular 0
-  line-height: 1.75rem
+  line-height: 1.5rem
   text-align: justify
 
 #greeting
@@ -12,6 +12,14 @@
   font-size: $font-size-xlarge
   text-align: right
   color: $color-primary-4
+
+  @media screen and (min-width: 640px)
+    font-size: $font-size-xlarge
+    letter-spacing: .05rem
+
+  #location
+    color: $color-primary-0
+    font-weight: 500
 
 #greeting-hr
   border-color: $color-primary-4

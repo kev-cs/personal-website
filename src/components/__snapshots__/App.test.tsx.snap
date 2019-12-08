@@ -33,6 +33,7 @@ Array [
       <img
         alt="Personal website logo"
         src="test-file-stub"
+        width="10rem"
       />
       <h1
         id="name"
@@ -49,6 +50,7 @@ Array [
       id="externalLinks"
     >
       <a
+        aria-label="My Github"
         href="https://github.com/kev-cs"
       >
         <i
@@ -56,6 +58,7 @@ Array [
         />
       </a>
       <a
+        aria-label="My LinkedIn page"
         href="https://www.linkedin.com/in/kevin-caro-silva-36670a136/"
       >
         <i
@@ -63,6 +66,7 @@ Array [
         />
       </a>
       <a
+        aria-label="My email to contact me"
         href="mailto:admin@kevincs.me"
       >
         <i
@@ -77,7 +81,13 @@ Array [
     <header
       id="greeting"
     >
-      Hi, I'm a software developer based in Montreal, QC.
+      Hi, I'm a software developer based in 
+      <span
+        id="location"
+      >
+        Montreal, QC
+      </span>
+      .
       <hr
         id="greetingHr"
       />
@@ -85,7 +95,9 @@ Array [
     <p>
       In a few words : Java, Agile, web development, automation, and simplicity.
        
-      I'm also a fan of clean coding, Linux, cloud development, CI/CD, TDD, and too much more to enumerate. I enjoy exploring solutions for software design and architecture.
+    </p>
+    <p>
+      I'm also a fan of clean coding, Linux, cloud development, CI/CD, TDD, and more. Moreover, I enjoy exploring solutions for software design and architecture.
        
     </p>
     <p>

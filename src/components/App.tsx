@@ -5,7 +5,6 @@ import Home from "components/Home";
 import LanguageSelector from "components/LanguageSelector";
 
 import fr from "assets/translations/fr.json";
-import { WebsiteDevNotice } from "./WebsiteDevNotice";
 
 type State = {
   locale: string;
@@ -44,7 +43,6 @@ export default class App extends React.Component <{}, State> {
     return (
       <>
         <IntlProvider locale={locale} messages={this.translations[locale]} defaultLocale={this.defaultLocale}>
-          <WebsiteDevNotice/>
           <LanguageSelector changeLanguage={this.changeLanguage} supportedLanguages={supportedLanguages}/>
           <Header/>
           <Home/>

@@ -1,40 +1,75 @@
 @import 'reset'
 
+@mixin themify-global
+  @each $theme, $map in $themes
+    .theme-#{$theme} &
+      $theme-map: () !global
+      @each $key, $submap in $map
+        $value: map-get(map-get($themes, $theme), '#{$key}')
+        $theme-map: map-merge($theme-map, ($key: $value)) !global
+
+      @content
+      $theme-map: null !global
+
+@mixin themify-self
+  @each $theme, $map in $themes
+    &.theme-#{$theme}
+      $theme-map: () !global
+      @each $key, $submap in $map
+        $value: map-get(map-get($themes, $theme), '#{$key}')
+        $theme-map: map-merge($theme-map, ($key: $value)) !global
+
+      @content
+      $theme-map: null !global
+
 html
   height: 100%
 
 body
+  font-size: $font-size-regular
   max-width: (720rem / 16)
   margin: auto
   height: 100%
 
+  @include themify-self
+    background-color: themed('color-background')
+    color: themed('color-text')
+
+  *
+    font-family: Comfortaa, sans-serif
+
 a
-  color: $color-primary-0
+  transition: color .2s
+
+  @include themify-global
+    color: themed('color-primary')
+
+    &:hover
+      color: themed('color-primary-variant')
+
+button
+  @include themify-global
+    color: themed('color-text')
 
 #root
-  padding: $padding-regular
-  font-family: Comfortaa, sans-serif
-  font-size: $font-size-regular
-  color: $color-primary-4
+  padding: $padding-small
   position: relative
   height: 100%
-  display: flex
-  flex-flow: column
+  display: grid
+  grid-template-rows: auto auto 1fr
 
 #footer
   margin: $margin-large 0
-  text-align: center
   font-size: $font-size-small
-  color: $color-primary-2
-  flex-grow: 1
-  vertical-align: bottom
+  font-weight: 700
   position: relative
+  min-height: 1rem
+
+  @include themify-global
+    color: rgba(themed('color-primary'), 0.5)
 
   span
     position: absolute
     width: 100%
     bottom: 0
-    display: block
-    vertical-align: bottom
-    left: 50%
-    transform: translateX(-50%)
+    text-align: center

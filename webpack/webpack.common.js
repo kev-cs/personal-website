@@ -43,7 +43,7 @@ const postCSSLoader = {
 const sassLoader = {
   loader: "sass-loader",
   options: {
-    data: "@import \"settings.sass\";"
+    data: "@import \"settings.scss\";"
   }
 };
 const miniCssExtractLoader = {

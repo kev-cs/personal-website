@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./Header.sass";
 import { defineMessages, FormattedMessage } from "react-intl";
-import logo from "assets/vector/isolated-layout.svg";
+import logo from "assets/vector/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";

@@ -1,41 +1,52 @@
 #header
-  margin: $margin-regular 0 $margin-regular
+  margin: 0 auto $margin-regular
+  width: 100%
   text-align: center
 
-  @media screen and (min-width: 640px)
-    margin-top: $margin-large
+  @media screen and (min-width: 360px)
+    margin-top: $margin-xlarge
+    margin-bottom: $margin-large
+
+  *
+    @include themify
+      text-shadow: themed('header-text-shadow')
 
   img
     width: 10rem
+    filter: drop-shadow( 0 1px 2px rgba(0, 0, 0, .4))
 
   > div
-    margin-bottom: $margin-regular
+    width: 100%
 
-    #name
-      font-family: Montserrat, sans-serif
-      font-size: $font-size-xxlarge
-      margin-bottom: $margin-small
-      color: $color-primary-4
+#name
+  font-family: Montserrat, sans-serif
+  font-size: $font-size-xxlarge
+  margin-bottom: $margin-small
 
-    #profession
-      font-family: "Roboto Mono", monospace
-      font-weight: 300
-      font-size: $font-size-large
-      color: $color-primary-4
-      letter-spacing: (1rem/16)
+#profession
+  font-family: "Roboto Mono", monospace
+  font-weight: 300
+  font-size: $font-size-large
+  letter-spacing: (1rem/16)
 
-      @media screen and (min-width: 360px)
-        letter-spacing: (4rem/16)
+  @media screen and (min-width: 360px)
+    letter-spacing: (4rem/16)
 
+#name, #profession
+  @include themify
+    color: themed(color-text)
 
 #external-links
   display: flex
   margin: $margin-regular auto
   justify-content: space-evenly
   max-width: (160rem / 16)
-  color: $color-primary-0
+  flex-direction: row
 
   a
     flex-grow: 1
     flex-basis: 0
     font-size: $font-size-xlarge
+
+    svg
+      filter: drop-shadow( 0 1px 2px rgba(0, 0, 0, .2))

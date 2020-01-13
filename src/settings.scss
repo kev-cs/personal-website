@@ -1,0 +1,67 @@
+$margin-xsmall: 0.25rem;
+$margin-small: 0.5rem;
+$margin-regular: 1.2rem;
+$margin-large: 2rem;
+$margin-xlarge: 4rem;
+$margin-xxlarge: 8rem;
+
+$padding-xsmall: 0.25rem;
+$padding-small: $margin-small;
+$padding-regular: $margin-regular;
+$padding-large: $margin-large;
+$padding-xlarge: $margin-xlarge;
+$padding-xxlarge: 6rem;
+
+$font-size-small: 0.75rem;
+$font-size-regular: 1rem;
+$font-size-large: 1.25rem;
+$font-size-xlarge: 1.75rem;
+$font-size-xxlarge: 2.5rem;
+
+$opacity-inactive: 0.8;
+$box-shadow-light: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+
+$themes: (
+  light: (
+    color-primary: #065e97,
+    color-primary-variant: lighten(#065e97, 15%),
+    color-background: #fff,
+    color-text: #000,
+    box-shadow: $box-shadow-light,
+    header-text-shadow: 1px 2px 4px #b0b0b0
+  ),
+  dark: (
+    color-primary: #6ab4ff,
+    color-primary-variant: lighten(#6ab4ff, 20%),
+    color-background: #121212,
+    color-background-elevated: #1f1f1f,
+    color-text: #fff
+  )
+);
+
+@mixin themify {
+  @each $theme, $map in $themes {
+    /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+    :global(.theme-#{$theme}) & {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+
+      @content;
+
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

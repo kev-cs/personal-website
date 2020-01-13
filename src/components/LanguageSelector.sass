@@ -4,41 +4,39 @@
   right: 0
   padding: $padding-xsmall
 
-  *
-    transition: all 0.2s ease-out
+  &, *
+    transition: all .1s ease-out
 
-  button
-    font-size: $font-size-regular
-    padding: $padding-small
-    border: 1px solid $color-primary-2
-    color: $color-primary-2
-    background-color: rgba(255, 255, 255, 0.9)
-    width: 100%
-    display: block
-    text-align: center
-    margin: 0 auto $margin-regular
-    position: relative
+.icon
+  margin: 0 auto $margin-small
+  padding: 0 $padding-xsmall
+  display: block
+  font-size: $font-size-xlarge
+  text-align: center
 
+.lang-option
+  font-size: $font-size-regular
+  padding: $padding-small
+  width: 100%
+  display: block
+  text-align: center
+  margin: 0 auto $margin-regular
+  position: relative
+
+  @media (hover: hover)
+    &:hover
+      cursor: pointer
+
+  @include themify
+    border: 1px solid themed('color-primary')
+    background-color: themed('color-background')
+
+.inactive
   .icon
-    margin: 0 auto $margin-small
-    padding: 0 $padding-xsmall
-    display: block
-    font-size: $font-size-xlarge
-    color: $color-primary-2
-    text-align: center
+    @include themify
+      color: rgba(themed('color-primary'), .6)
 
-  button.shown
-    opacity: 1
-    transform: translateY(0%)
-
-    @media (hover: hover)
-      &:hover
-        cursor: pointer
-        color: $color-primary-4
-        border-color: $color-primary-4
-
-  .inactive
-    opacity: $opacity-inactive
-
-  .active
-    opacity: 1
+.active
+  .icon
+    @include themify
+      color: themed('color-primary')

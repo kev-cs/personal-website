@@ -39,11 +39,11 @@ export default class LanguageSelector extends React.Component<Props, State> {
     const { showLanguages } = this.state;
     const { supportedLanguages } = this.props;
 
-    const langClasses = showLanguages ? styles.shown : styles.hidden;
-    const iconClasses = `${styles.icon} ${showLanguages ? styles.active : styles.inactive}`;
+    const langClasses = styles.langOption;
+    const iconClasses = styles.icon;
 
     return (
-      <div id={styles.languageSelector}>
+      <div id={styles.languageSelector} className={showLanguages? styles.active : styles.inactive}>
         <FontAwesomeIcon icon={faLanguage} className={iconClasses}
            onClick={this.toggleShowLanguages}
            data-testid="toggle-show-languages"/>

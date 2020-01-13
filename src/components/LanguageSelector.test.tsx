@@ -19,7 +19,7 @@ describe("LanguageSelector", function() {
       />);
   });
 
-  function clickOnToggleLanguagesOptionsIcon() {
+  function clickOnToggleLanguagesOptionsIcon(): void {
     fireEvent(
       sut.getByTestId("toggle-show-languages"),
       new MouseEvent("click", {

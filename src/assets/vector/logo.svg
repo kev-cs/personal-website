@@ -5,8 +5,8 @@
     <defs data-v-fde0c5aa="">
         <linearGradient data-v-fde0c5aa="" gradientTransform="rotate(25)" id="dc996fa9-585b-415d-a671-e6e4463ff6be"
                         x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop data-v-fde0c5aa="" offset="0%" stop-color="#006678" stop-opacity="1"></stop>
-            <stop data-v-fde0c5aa="" offset="100%" stop-color="#4FA8FF" stop-opacity="1"></stop>
+            <stop data-v-fde0c5aa="" offset="10%" stop-color="#065E97" stop-opacity="1"></stop>
+            <stop data-v-fde0c5aa="" offset="80%" stop-color="#6ab4ff" stop-opacity="1"></stop>
         </linearGradient>
     </defs>
     <g data-v-fde0c5aa="" id="ed2f2241-7286-4a60-8e0e-c2aebb59f0af" fill="url(#dc996fa9-585b-415d-a671-e6e4463ff6be)"

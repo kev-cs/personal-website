@@ -1,3 +1,14 @@
+#home
+  border-radius: (1rem/3)
+  padding: $padding-regular
+
+  @include themify
+    background-color: themed('color-background-elevated')
+    box-shadow: themed('box-shadow')
+
+  @media screen and (min-width: 640px)
+    padding: $padding-regular $padding-large
+
 #home p
   margin: $margin-regular 0
   line-height: 1.5rem
@@ -5,26 +16,35 @@
 
 #greeting
   position: relative
-  padding: $padding-large $padding-regular
+  padding: $padding-large 0
   max-width: (480rem / 16)
-  margin: 0 0 $margin-large auto
+  margin: auto 0 auto auto
+  text-align: right
   font-family: Montserrat, sans-serif
   font-size: $font-size-xlarge
-  text-align: right
-  color: $color-primary-4
+
+  @include themify
+    color: themed('color-text')
 
   @media screen and (min-width: 640px)
     font-size: $font-size-xlarge
     letter-spacing: .05rem
+    padding: $padding-large $padding-small
 
-  #location
-    color: $color-primary-0
-    font-weight: 500
+#location
+  font-weight: 500
+  font-family: Montserrat, sans-serif
+
+  @include themify
+    color: themed('color-primary')
 
 #greeting-hr
-  border-color: $color-primary-4
   margin-top: $margin-regular
   margin-bottom: 0
   margin-right: 0
   width: 20%
+
+  @include themify
+    color: themed('color-primary')
+    border-color: themed('color-primary')
 

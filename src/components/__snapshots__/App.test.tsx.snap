@@ -3,11 +3,12 @@
 exports[`App renders correctly 1`] = `
 Array [
   <div
+    className="inactive"
     id="languageSelector"
   >
     <svg
       aria-hidden="true"
-      className="svg-inline--fa fa-language fa-w-20 icon inactive"
+      className="svg-inline--fa fa-language fa-w-20 icon"
       data-icon="language"
       data-prefix="fas"
       data-testid="toggle-show-languages"
@@ -135,11 +136,9 @@ Array [
     </header>
     <p>
       In a few words : Java, Agile, web development, automation, and simplicity.
-       
     </p>
     <p>
       I'm also a fan of clean coding, Linux, cloud development, CI/CD, TDD, and more. Moreover, I enjoy exploring solutions for software design and architecture.
-       
     </p>
     <p>
       Currently doing Java development at Desjardins Group.
@@ -149,7 +148,7 @@ Array [
     id="footer"
   >
     <span>
-      © 2019 Kevin Caro Silva
+      © 2020 Kevin Caro Silva
     </span>
   </footer>,
 ]

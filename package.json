@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.js",
-    "build": "npm run test && npm run translations:validate && npm run build:bundle",
-    "build:bundle": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
+    "build": "NODE_ENV=production; npm run translations:validate && webpack --config webpack/webpack.prod.js",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "translations:extract-messages": "NODE_ENV=production babel src --extensions .ts,.tsx,.js --out-file /dev/null",
     "translations:manage-translations": "node ./scripts/translationRunner.js",
-    "translations:validate": "./scripts/manage-translations.sh"
+    "translations:validate": "./scripts/validate-translations.sh"
   },
   "author": "Kevin Caro Silva",
   "license": "CC BY-SA 4.0",

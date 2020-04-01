@@ -1,12 +1,10 @@
 {
   "about": "À propos",
   "connect": "Joindre",
-  "devNoticeTitle": "Petit à petit",
   "greeting": "Bonjour, je suis un développeur résidant à <span>Montréal, QC</span>.",
   "home": "Accueil",
   "homeIntro1": "En quelques mots : Java, Agilité, développement web, automatisation, et de la simplicité.",
   "homeIntro2": "Je suis un fan du \"clean coding\", de Linux, du développement nuagique, des pratiques de CI/CD, du TDD, et d'avantage. Mais encore, j'aime m'entretenir en explorant des solutions de conception et d'architecture logicielle.",
   "homeIntro3": "Présentement, je fais du développement Java chez le groupe financier Desjardins.",
-  "profession": "Développeur logiciel",
-  "websiteDevMessage": "Je suis en train de développer ce site; plus de contenu sera disponible bientôt!"
+  "profession": "Développeur logiciel"
 }

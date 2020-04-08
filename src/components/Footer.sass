@@ -1,0 +1,89 @@
+#footer
+  margin: $margin-large 0
+  font-size: $font-size-small
+  font-weight: 700
+  position: relative
+
+  @media screen and (min-width: 640px)
+    min-height: $font-size-regular
+
+  @include themify
+    color: themed('color-primary')
+
+#footer-content-wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  @media screen and (min-width: 640px)
+    position: absolute
+    bottom: 0
+    flex-direction: row
+
+    > div
+      margin-right: $margin-small
+
+  > div
+    line-height: normal
+    opacity: 0.6
+    transition: opacity .2s
+
+    &:hover
+      opacity: 1
+
+.separator
+  width: 0 !important
+  height: $font-size-large
+  border: 0 solid
+  border-right-width: 1px
+  border-left-width: 1px
+  display: none
+
+  @include themify
+    background-color: themed('color-primary')
+
+  @media screen and (min-width: 640px)
+    display: block
+
+#lang-selector
+  text-decoration: underline
+  min-height: 2rem
+
+  @media screen and (min-width: 640px)
+    min-height: auto
+
+#toggler
+  border: none
+  animation: fadeIn .2s ease-in
+
+  &:hover
+    cursor: pointer
+
+  &.showing-languages
+    display: none
+    opacity: 0
+
+#lang-options
+  white-space: nowrap
+  animation: fadeIn .2s ease-in
+
+  @media screen and (min-width: 640px)
+    top: 0
+    position: absolute
+    transform: translateY(-$padding-xsmall - (1/8))
+
+  button
+    margin: 0 $margin-xsmall 0
+    padding: $padding-xsmall $padding-small
+    font-size: $font-size-regular
+
+#close-lang-options
+  @include themify
+    color: themed('color-text ')
+    border-color: themed('color-text')
+
+@keyframes fadeIn
+  0%
+    opacity: .5
+  100%
+    opacity: 1

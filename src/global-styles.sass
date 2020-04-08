@@ -50,6 +50,12 @@ a
 button
   @include themify-global
     color: themed('color-text')
+    border: 1px solid themed('color-primary')
+    background-color: themed('color-background')
+
+  @media (hover: hover)
+    &:hover
+      cursor: pointer
 
 #root
   padding: $padding-small
@@ -57,19 +63,3 @@ button
   height: 100%
   display: grid
   grid-template-rows: auto auto 1fr
-
-#footer
-  margin: $margin-large 0
-  font-size: $font-size-small
-  font-weight: 700
-  position: relative
-  min-height: 1rem
-
-  @include themify-global
-    color: rgba(themed('color-primary'), 0.5)
-
-  span
-    position: absolute
-    width: 100%
-    bottom: 0
-    text-align: center

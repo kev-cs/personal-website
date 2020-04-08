@@ -1,21 +1,23 @@
 import * as React from "react";
-import { IntlProvider } from "react-intl";
+import {IntlProvider} from "react-intl";
 import Header from "components/Header";
 import Home from "components/Home";
-import LanguageSelector from "components/LanguageSelector";
 
 import fr from "assets/translations/fr.json";
-
-type State = {
-  theme: string;
-  locale: string;
-}
+import {Footer} from "./Footer";
 
 const supportedLanguagesBackingArray = ["en", "fr"] as const;
+
 const supportedLanguages: Array<string> = [...supportedLanguagesBackingArray];
 type SupportedLanguage = typeof supportedLanguagesBackingArray[number];
 
-export default class App extends React.Component<{}, State> {
+export default class App extends React.Component<
+  {},
+  {
+    theme: string;
+    locale: string;
+  }
+> {
   private readonly defaultLocale: SupportedLanguage = "en";
   private readonly translations: Record<
     SupportedLanguage,
@@ -26,7 +28,7 @@ export default class App extends React.Component<{}, State> {
   };
 
   state = {
-    theme: 'dark',
+    theme: "light",
     locale: navigator.language.split(/[-_]/)[0] // locale without region code
   };
 
@@ -43,12 +45,6 @@ export default class App extends React.Component<{}, State> {
       ? (this.state.locale as SupportedLanguage)
       : this.defaultLocale;
 
-    const Footer = (): JSX.Element => (
-      <footer id="footer">
-        <span>© 2020 Kevin Caro Silva</span>
-      </footer>
-    );
-
     document.body.className = `theme-${this.state.theme}`;
 
     return (
@@ -58,13 +54,12 @@ export default class App extends React.Component<{}, State> {
           messages={this.translations[locale]}
           defaultLocale={this.defaultLocale}
         >
-          <LanguageSelector
+          <Header />
+          <Home />
+          <Footer
             changeLanguage={this.changeLanguage}
             supportedLanguages={supportedLanguages}
           />
-          <Header />
-          <Home />
-          <Footer />
         </IntlProvider>
       </>
     );

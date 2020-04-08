@@ -1,6 +1,7 @@
 #home
   border-radius: (1rem/3)
   padding: $padding-regular
+  animation: fadeIn 1s
 
   @include themify
     background-color: themed('color-background-elevated')
@@ -48,3 +49,8 @@
     color: themed('color-primary')
     border-color: themed('color-primary')
 
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1

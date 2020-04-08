@@ -1,10 +1,9 @@
 import * as React from "react";
 import styles from "./Header.sass";
-import { defineMessages, FormattedMessage } from "react-intl";
-import logo from "assets/vector/logo.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {defineMessages, FormattedMessage} from "react-intl";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 const messages = defineMessages({
   profession: {
@@ -30,7 +29,6 @@ export default class Header extends React.Component<{}, {}> {
     return (
       <header id={styles.header}>
         <div>
-          <img src={logo} alt="Personal website logo" width="10rem"/>
           <h1 id={styles.name}>Kevin Caro Silva</h1>
           <h2 id={styles.profession}>
             <FormattedMessage {...messages.profession}/>
